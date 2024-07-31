@@ -1,0 +1,154 @@
+@import url("reset.css");
+
+:root{
+    --moderate-violet:hsl(263, 55%, 52%);
+    --very-dark-grayish-blue:hsl(217, 19%, 35%);
+    --very-dark-blackish-blue:hsl(219, 29%, 14%);
+    --light-gray:hsl(0, 0%, 81%);
+    --light-grayish-blue:hsl(210, 46%, 95%);
+}
+
+*{
+    margin:0;
+    padding:0;
+    font-family: "Barlow Semi Condensed";
+}
+
+h2{
+    padding:1rem 0;
+    color:white;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+h4{
+    font-size: 15px;
+    font-weight: 600;
+}
+
+p{
+    color:white;
+    opacity: 0.7;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+body{
+    background-color: var(--light-grayish-blue);
+    padding:3rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    max-width: 80rem;
+    display: flex;
+    flex-direction: column;
+    gap:1.5rem;
+}
+
+main div{
+    border-radius: 10px;
+    padding:2rem;
+}
+
+.daniel{
+    background-color: var(--moderate-violet);
+    background-image: url("../images/bg-pattern-quotation.svg");
+    background-repeat: no-repeat;
+    background-position-x: max(85%,13rem);
+}
+
+.jonathan{
+    background-color: var(--very-dark-grayish-blue);
+}
+
+.patrick{
+    background-color: var(--very-dark-blackish-blue);
+}
+
+.jeanette,.kira{
+    background-color: white;
+}
+
+/*Author's Styling*/
+
+.author-container,.name{
+    padding:0;
+}
+
+.hero{
+    width:35px;
+    border-radius: 100%;
+}
+
+.daniel .hero, .patrick .hero{
+    border:2px solid hsl(251, 29%, 66%);
+}
+
+.author-container{
+    display: flex;
+    gap:1rem;
+}
+
+.name h4{
+    color:white;
+}
+
+.name p{
+    color:white;
+    opacity: 0.5;
+}
+
+/* Jeanette and Kira Styling */
+
+.jeanette .name h4, .kira .name h4{
+    color:var(--very-dark-grayish-blue);
+}
+
+.jeanette .name p, .kira .name p{
+    color:var(--very-dark-grayish-blue);
+    opacity: 0.5;
+}
+
+.jeanette h2, .kira h2{
+    color:var(--very-dark-grayish-blue);
+}
+
+.jeanette p, .kira p{
+    color:var(--very-dark-grayish-blue);
+    opacity: 0.7;
+}
+
+@media (min-width:50em){
+    main{
+        height: 600px;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(2,1fr);
+        grid-template-areas: 
+            'daniel daniel jonathan kira'
+            'jeanette patrick patrick kira';
+    }
+
+    .daniel{
+        grid-area: daniel;
+    }
+
+    .jonathan{
+        grid-area: jonathan;
+    }
+
+    .kira{
+        grid-area: kira;
+    }
+
+    .jeanette{
+        grid-area: jeanette;
+    }
+
+    .patrick{
+        grid-area: patrick;
+    }
+}
